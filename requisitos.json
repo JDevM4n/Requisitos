@@ -1,0 +1,109 @@
+[
+  {
+    "id": 1,
+    "titulo": "Intercambio semestral internacional - Pregrado",
+    "nivel": "Pregrado",
+    "facultad": "General",
+    "modalidad": "Presencial",
+    "descripcion": "Convocatoria para estudiantes de pregrado que desean realizar un intercambio semestral internacional.",
+    "requisitos": [
+      "Estar matriculado en la Universidad de los Andes en el período de postulación a la convocatoria, en el semestre anterior a la realización del intercambio y en el semestre de la movilidad académica.",
+      "Estar cursando al menos tercer semestre, según créditos cursados, en el momento de hacer la solicitud.",
+      "Tener un promedio ponderado mínimo de 3.25.",
+      "Si la universidad de destino exige un promedio superior, debes cumplir con ese promedio.",
+      "Tener materias por cursar; no es posible postularse ni realizar el intercambio si ya terminaste materias.",
+      "Al menos una de las materias pendientes debe poder homologarse a tu regreso.",
+      "No tener sanción disciplinaria en el momento de realizar el intercambio.",
+      "Cumplir con el requisito de idioma de la universidad o universidades de interés.",
+      "Diligenciar completamente el formulario de inscripción y cargar todos los documentos requeridos dentro de las fechas establecidas."
+    ],
+    "programas_aplica": [],
+    "notas": [
+      "Los estudiantes de Arquitectura podrán realizar intercambio para séptimo u octavo semestre y postularse en quinto o sexto semestre respectivamente, según materias cursadas y aprobadas.",
+      "En Arquitectura, las materias correspondientes al sexto y noveno semestre deben cursarse y aprobarse en Uniandes, ya que no están sujetas a homologación.",
+      "Para estudiantes de Economía, es ideal haber culminado el Ciclo Básico de Economía en Uniandes."
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "Intercambio semestral internacional - Maestría",
+    "nivel": "Maestría",
+    "facultad": "General",
+    "modalidad": "Presencial",
+    "descripcion": "Requisitos generales para maestrías de Uniandes, excepto Facultad de Administración.",
+    "requisitos": [
+      "Estar matriculado en la Universidad de los Andes en el período de postulación a la convocatoria, en el semestre anterior a la realización del intercambio y en el semestre de la movilidad académica.",
+      "El intercambio académico para estudiantes de maestría implica el pago del equivalente a 2 créditos de matrícula de tu programa.",
+      "Haber cursado y culminado al menos un semestre académico de la maestría de Uniandes por la cual te postulas.",
+      "Tener materias por cursar; no es posible postularse ni realizar el intercambio si ya terminaste materias.",
+      "Es obligatorio que al menos una de las materias pendientes sea homologada a tu regreso con una materia de tu programa en Uniandes.",
+      "Tener un promedio general acumulado mínimo de 3.50.",
+      "Si la universidad de destino exige un promedio superior, debes cumplir con ese promedio.",
+      "Cumplir con el requisito de idioma exigido por la universidad de destino.",
+      "No tener sanción disciplinaria en el momento de realizar el intercambio.",
+      "Diligenciar completamente el formulario de inscripción y cargar todos los documentos requeridos dentro de las fechas establecidas."
+    ],
+    "programas_aplica": [],
+    "notas": [
+      "Estos requisitos aplican a todas las facultades, excepto a la Facultad de Administración."
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Intercambio semestral internacional - Maestrías presenciales de Administración",
+    "nivel": "Maestría",
+    "facultad": "Administración",
+    "modalidad": "Presencial",
+    "descripcion": "Requisitos para estudiantes de maestrías presenciales de la Facultad de Administración.",
+    "requisitos": [
+      "Ser estudiante de uno de los programas de maestría presenciales habilitados por la Facultad de Administración.",
+      "Estar matriculado en la Universidad de los Andes en el período de postulación a la convocatoria, en el semestre anterior a la realización del intercambio y en el semestre de la movilidad académica.",
+      "El intercambio académico para estudiantes de maestría implica el pago del equivalente a 2 créditos de matrícula de tu programa.",
+      "Haber cursado y culminado al menos un semestre académico de la maestría de Uniandes por la cual te postulas.",
+      "Tener materias por cursar; no es posible postularse ni realizar el intercambio si ya terminaste materias.",
+      "Es obligatorio que al menos una de las materias pendientes sea homologada a tu regreso con una materia de tu programa en Uniandes.",
+      "Tener un promedio general acumulado mínimo de 3.50.",
+      "Si la universidad de destino exige un promedio superior, debes cumplir con ese promedio.",
+      "Cumplir con el requisito de idioma exigido por la universidad de destino.",
+      "No tener sanción disciplinaria en el momento de realizar el intercambio.",
+      "Diligenciar completamente el formulario de inscripción y cargar todos los documentos requeridos dentro de las fechas establecidas."
+    ],
+    "programas_aplica": [
+      "Maestría en Administración - Tiempo Parcial",
+      "MBA Ejecutivo",
+      "Maestría en Mercadeo",
+      "Maestría en Finanzas",
+      "Maestría en Gerencia Ambiental",
+      "Maestría en Gerencia y Práctica del Desarrollo",
+      "Maestría en Gestión de la Cadena de Suministro",
+      "Maestría en Gerencia Estratégica"
+    ],
+    "notas": []
+  },
+  {
+    "id": 4,
+    "titulo": "Intercambio semestral internacional - Maestrías virtuales de Administración",
+    "nivel": "Maestría",
+    "facultad": "Administración",
+    "modalidad": "Virtual",
+    "descripcion": "Requisitos para estudiantes de maestrías virtuales de la Facultad de Administración.",
+    "requisitos": [
+      "Ser estudiante de uno de los programas de maestría virtuales habilitados por la Facultad de Administración.",
+      "Haber estado matriculado en un programa de maestría durante el ciclo anterior a la convocatoria, durante el semestre de postulación y durante el semestre en que se realizará la movilidad académica.",
+      "El intercambio académico para estudiantes de maestría implica el pago del equivalente a 2 créditos de matrícula de tu programa.",
+      "Haber cursado y culminado al menos tres ciclos académicos de la maestría por la cual te postulas.",
+      "Tener materias por cursar; no es posible postularse ni realizar el intercambio si ya terminaste materias.",
+      "Es obligatorio que al menos una de las materias pendientes sea homologada a tu regreso con una materia de tu programa en Uniandes.",
+      "Tener un promedio general acumulado mínimo de 3.50.",
+      "Si la universidad de destino exige un promedio superior, debes cumplir con ese promedio.",
+      "Cumplir con el requisito de idioma exigido por la universidad de destino.",
+      "No tener sanción disciplinaria en el momento de realizar el intercambio.",
+      "Diligenciar completamente el formulario de inscripción y cargar todos los documentos requeridos dentro de las fechas establecidas."
+    ],
+    "programas_aplica": [
+      "MBA Online",
+      "Maestría en Regeneración y Desarrollo Sostenible (Virtual)"
+    ],
+    "notas": []
+  }
+]
