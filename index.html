@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta de requisitos | Convocatorias internacionales</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">Movilidad académica</p>
+      <h1>Consulta tus requisitos</h1>
+      <p class="subtitle">
+        Filtra según tu nivel y tipo de programa para conocer los requisitos
+        de tu convocatoria.
+      </p>
+    </header>
+
+    <section class="filters-card">
+      <h2>Filtros</h2>
+
+      <div class="filters-grid">
+        <div class="field">
+          <label for="nivel">Nivel académico</label>
+          <select id="nivel">
+            <option value="">Todos</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="facultad">Facultad / grupo</label>
+          <select id="facultad">
+            <option value="">Todos</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="modalidad">Modalidad</label>
+          <select id="modalidad">
+            <option value="">Todas</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btnBuscar" class="btn btn-primary">Buscar</button>
+        <button id="btnLimpiar" class="btn btn-secondary">Limpiar filtros</button>
+      </div>
+    </section>
+
+    <section class="results-header">
+      <h2>Resultados</h2>
+      <p id="resultsCount">Cargando información...</p>
+    </section>
+
+    <section id="results" class="results"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
