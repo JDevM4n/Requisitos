@@ -1,6 +1,6 @@
 :root {
-  --bg-1: #edf3f9;
-  --bg-2: #f6f9fc;
+  --bg-top: #eaf1f8;
+  --bg-bottom: #f6f9fc;
 
   --surface: rgba(255, 255, 255, 0.58);
   --surface-strong: rgba(255, 255, 255, 0.72);
@@ -9,22 +9,24 @@
   --text: #172033;
   --muted: #5f6c80;
 
-  --border: rgba(15, 61, 117, 0.12);
-  --border-strong: rgba(15, 61, 117, 0.18);
-
   --primary: #0f3d75;
   --primary-2: #1b4f8f;
   --primary-dark: #0b2747;
 
+  --border: rgba(15, 61, 117, 0.12);
+  --border-strong: rgba(15, 61, 117, 0.18);
+
   --accent: rgba(15, 61, 117, 0.08);
-  --accent-strong: rgba(15, 61, 117, 0.12);
+  --accent-2: rgba(15, 61, 117, 0.12);
 
   --shadow-sm: 0 8px 24px rgba(15, 61, 117, 0.06);
-  --shadow-md: 0 16px 40px rgba(15, 61, 117, 0.10);
+  --shadow-md: 0 16px 44px rgba(15, 61, 117, 0.10);
+
+  --radius: 22px;
+  --radius-md: 16px;
+  --radius-sm: 14px;
 
   --blur: 16px;
-  --radius: 22px;
-  --radius-sm: 14px;
 }
 
 * {
@@ -40,9 +42,9 @@ body {
   font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(15, 61, 117, 0.08), transparent 32%),
-    radial-gradient(circle at top right, rgba(15, 61, 117, 0.05), transparent 28%),
-    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    radial-gradient(circle at top left, rgba(15, 61, 117, 0.08), transparent 30%),
+    radial-gradient(circle at top right, rgba(15, 61, 117, 0.05), transparent 24%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
   min-height: 100vh;
 }
 
@@ -59,39 +61,39 @@ body {
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   margin: 0 0 16px;
   padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.36);
   border: 1px solid rgba(15, 61, 117, 0.10);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.02em;
   box-shadow: var(--shadow-sm);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .hero h1 {
   margin: 0 0 14px;
-  font-size: clamp(38px, 5vw, 58px);
+  color: var(--primary-dark);
+  font-size: clamp(38px, 5vw, 60px);
   line-height: 1.02;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: var(--primary-dark);
 }
 
 .subtitle {
   margin: 0;
-  max-width: 760px;
+  max-width: 780px;
   color: var(--muted);
   font-size: 18px;
   line-height: 1.7;
 }
 
 .filters-card,
+.results-header,
 .result-card,
 .empty-state {
   background: var(--surface);
@@ -104,16 +106,15 @@ body {
 
 .filters-card {
   padding: 28px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .filters-card h2,
 .results-header h2 {
-  margin-top: 0;
-  margin-bottom: 18px;
-  font-size: 20px;
-  line-height: 1.2;
+  margin: 0 0 18px;
   color: var(--primary-dark);
+  font-size: 22px;
+  line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
@@ -130,9 +131,9 @@ body {
 }
 
 label {
+  color: var(--primary);
   font-size: 14px;
   font-weight: 700;
-  color: var(--primary);
   letter-spacing: 0.01em;
 }
 
@@ -140,19 +141,24 @@ select {
   width: 100%;
   min-height: 50px;
   padding: 0 16px;
+  border-radius: var(--radius-sm);
   border: 1px solid rgba(15, 61, 117, 0.12);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.46);
+  background: rgba(255, 255, 255, 0.42);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--text);
   font-size: 15px;
   outline: none;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 select:hover {
-  border-color: rgba(15, 61, 117, 0.20);
+  border-color: rgba(15, 61, 117, 0.18);
+  background: rgba(255, 255, 255, 0.52);
 }
 
 select:focus {
@@ -188,41 +194,46 @@ select:focus {
 }
 
 .btn-primary {
-  border: 1px solid rgba(15, 61, 117, 0.18);
+  border: 1px solid rgba(15, 61, 117, 0.16);
   background: linear-gradient(180deg, #144884 0%, #0f3d75 100%);
   color: #ffffff;
-  box-shadow: 0 10px 22px rgba(15, 61, 117, 0.18);
+  box-shadow: 0 10px 24px rgba(15, 61, 117, 0.18);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 14px 26px rgba(15, 61, 117, 0.24);
+  box-shadow: 0 14px 28px rgba(15, 61, 117, 0.24);
 }
 
 .btn-secondary {
   border: 1px solid rgba(15, 61, 117, 0.10);
-  background: rgba(255, 255, 255, 0.44);
+  background: rgba(255, 255, 255, 0.42);
   color: var(--primary);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.60);
 }
 
 .results-header {
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
   margin-bottom: 18px;
-  flex-wrap: wrap;
+  padding: 18px 22px;
+}
+
+.results-header h2 {
+  margin: 0;
 }
 
 .results-header p {
   margin: 0;
   color: var(--muted);
   font-size: 15px;
+  text-align: right;
 }
 
 .results {
@@ -237,17 +248,17 @@ select:focus {
 .card-top {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 16px;
-  align-items: start;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .card-title {
   margin: 0;
-  font-size: 30px;
-  line-height: 1.15;
   color: var(--primary);
+  font-size: 30px;
+  line-height: 1.14;
   letter-spacing: -0.02em;
 }
 
@@ -260,11 +271,11 @@ select:focus {
 .badge {
   padding: 8px 12px;
   border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.48);
+  background: rgba(255, 255, 255, 0.44);
   border: 1px solid rgba(15, 61, 117, 0.10);
   color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -272,15 +283,15 @@ select:focus {
 .card-desc {
   margin: 0 0 18px;
   color: var(--muted);
-  line-height: 1.7;
   font-size: 16px;
+  line-height: 1.7;
 }
 
 .requirements-box {
   background: rgba(255, 255, 255, 0.34);
   border: 1px solid rgba(15, 61, 117, 0.10);
   border-radius: 18px;
-  padding: 18px 18px 16px;
+  padding: 18px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -288,10 +299,10 @@ select:focus {
 .requirements-box h3,
 .notes-box h3,
 .programs-box h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 17px;
+  margin: 0 0 12px;
   color: var(--primary-dark);
+  font-size: 17px;
+  line-height: 1.25;
   letter-spacing: -0.01em;
 }
 
@@ -300,8 +311,8 @@ select:focus {
 .programs-list {
   margin: 0;
   padding-left: 20px;
-  line-height: 1.72;
   color: var(--text);
+  line-height: 1.72;
 }
 
 .requirements-list li,
@@ -311,15 +322,15 @@ select:focus {
 }
 
 .extra-grid {
-  margin-top: 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  margin-top: 16px;
 }
 
 .notes-box,
 .programs-box {
-  background: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.36);
   border: 1px solid rgba(15, 61, 117, 0.10);
   border-radius: 18px;
   padding: 18px;
@@ -336,6 +347,7 @@ select:focus {
 .empty-state h3 {
   margin: 0 0 10px;
   color: var(--primary-dark);
+  font-size: 22px;
 }
 
 .empty-state p {
@@ -343,27 +355,50 @@ select:focus {
   line-height: 1.7;
 }
 
-@media (max-width: 820px) {
-  .container {
-    width: min(100% - 24px, 1120px);
-    padding: 24px 0 40px;
-  }
-
+@media (max-width: 920px) {
   .filters-grid,
   .extra-grid {
     grid-template-columns: 1fr;
   }
 
+  .results-header {
+    align-items: flex-start;
+  }
+
+  .results-header p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 24px, 1120px);
+    padding: 24px 0 40px;
+  }
+
   .filters-card,
-  .result-card {
+  .result-card,
+  .results-header {
     padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+
+  .subtitle {
+    font-size: 16px;
   }
 
   .card-title {
     font-size: 24px;
   }
 
-  .subtitle {
-    font-size: 16px;
+  .btn {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
   }
 }
