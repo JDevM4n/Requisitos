@@ -4,23 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consulta de requisitos | Convocatorias internacionales</title>
+
+  <!-- Fuente elegante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <main class="container">
+
+    <!-- HERO -->
     <header class="hero">
       <p class="eyebrow">Movilidad académica</p>
+
       <h1>Consulta tus requisitos</h1>
+
       <p class="subtitle">
-        Filtra según tu nivel y tipo de programa para conocer los requisitos
-        de tu convocatoria.
+        Filtra según tu nivel académico, facultad y modalidad para conocer los requisitos de tu convocatoria de movilidad internacional.
       </p>
     </header>
 
+    <!-- FILTROS -->
     <section class="filters-card">
-      <h2>Filtros</h2>
+      <h2>Filtros de búsqueda</h2>
 
       <div class="filters-grid">
+
         <div class="field">
           <label for="nivel">Nivel académico</label>
           <select id="nivel">
@@ -41,20 +53,31 @@
             <option value="">Todas</option>
           </select>
         </div>
+
       </div>
 
       <div class="actions">
-        <button id="btnBuscar" class="btn btn-primary">Buscar</button>
-        <button id="btnLimpiar" class="btn btn-secondary">Limpiar filtros</button>
+        <button id="btnBuscar" class="btn btn-primary">
+          Buscar convocatorias
+        </button>
+
+        <button id="btnLimpiar" class="btn btn-secondary">
+          Limpiar filtros
+        </button>
       </div>
     </section>
 
+    <!-- HEADER RESULTADOS -->
     <section class="results-header">
       <h2>Resultados</h2>
       <p id="resultsCount">Cargando información...</p>
     </section>
 
-    <section id="results" class="results"></section>
+    <!-- RESULTADOS -->
+    <section id="results" class="results">
+      <!-- Se llena con JS -->
+    </section>
+
   </main>
 
   <script src="app.js"></script>
