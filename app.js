@@ -3,40 +3,55 @@ let convocatorias = [];
 const nivelSelect = document.getElementById("nivel");
 const facultadSelect = document.getElementById("facultad");
 const modalidadSelect = document.getElementById("modalidad");
+
 const btnBuscar = document.getElementById("btnBuscar");
 const btnLimpiar = document.getElementById("btnLimpiar");
+
 const resultsContainer = document.getElementById("results");
 const resultsCount = document.getElementById("resultsCount");
 
+
+// 🚀 Cargar datos
 async function cargarDatos() {
   try {
     const response = await fetch("requisitos.json");
+
     if (!response.ok) {
       throw new Error("No se pudo cargar requisitos.json");
     }
 
     convocatorias = await response.json();
+
     poblarFiltros();
     renderizarResultados(convocatorias);
+
   } catch (error) {
     console.error(error);
-    resultsCount.textContent = "No se pudo cargar la información.";
+
+    resultsCount.textContent = "Error al cargar información";
+
     resultsContainer.innerHTML = `
       <article class="empty-state">
-        Ocurrió un error al cargar los requisitos.
+        <h3>Error al cargar</h3>
+        <p>No fue posible obtener los requisitos en este momento.</p>
       </article>
     `;
   }
 }
 
+
+// 🔎 Obtener valores únicos
 function obtenerValoresUnicos(lista, campo) {
-  return [...new Set(lista.map(item => item[campo]).filter(Boolean))].sort((a, b) =>
-    a.localeCompare(b, "es")
-  );
+  return [...new Set(
+    lista.map(item => item[campo]).filter(Boolean)
+  )].sort((a, b) => a.localeCompare(b, "es"));
 }
 
+
+// 🎯 Poblar select
 function poblarSelect(select, valores, textoTodos) {
   select.innerHTML = `<option value="">${textoTodos}</option>`;
+
   valores.forEach(valor => {
     const option = document.createElement("option");
     option.value = valor;
@@ -45,37 +60,47 @@ function poblarSelect(select, valores, textoTodos) {
   });
 }
 
+
+// 🧠 Poblar filtros
 function poblarFiltros() {
   poblarSelect(nivelSelect, obtenerValoresUnicos(convocatorias, "nivel"), "Todos");
   poblarSelect(facultadSelect, obtenerValoresUnicos(convocatorias, "facultad"), "Todos");
   poblarSelect(modalidadSelect, obtenerValoresUnicos(convocatorias, "modalidad"), "Todas");
 }
 
+
+// 🔍 Filtrar
 function filtrarConvocatorias() {
   const nivel = nivelSelect.value;
   const facultad = facultadSelect.value;
   const modalidad = modalidadSelect.value;
 
   return convocatorias.filter(item => {
-    const cumpleNivel = !nivel || item.nivel === nivel;
-    const cumpleFacultad = !facultad || item.facultad === facultad;
-    const cumpleModalidad = !modalidad || item.modalidad === modalidad;
-
-    return cumpleNivel && cumpleFacultad && cumpleModalidad;
+    return (
+      (!nivel || item.nivel === nivel) &&
+      (!facultad || item.facultad === facultad) &&
+      (!modalidad || item.modalidad === modalidad)
+    );
   });
 }
 
+
+// 📋 Crear lista HTML
 function crearListaHTML(items) {
   return items.map(item => `<li>${item}</li>`).join("");
 }
 
+
+// 🎨 Renderizar resultados
 function renderizarResultados(data) {
+
   resultsCount.textContent = `${data.length} resultado(s) encontrado(s)`;
 
   if (!data.length) {
     resultsContainer.innerHTML = `
       <article class="empty-state">
-        No encontramos convocatorias con esos filtros. Prueba con otra combinación.
+        <h3>Sin resultados</h3>
+        <p>No encontramos convocatorias con esos filtros. Intenta con otra combinación.</p>
       </article>
     `;
     return;
@@ -83,6 +108,7 @@ function renderizarResultados(data) {
 
   resultsContainer.innerHTML = data.map(item => `
     <article class="result-card">
+
       <div class="card-top">
         <div>
           <h3 class="card-title">${item.titulo}</h3>
@@ -105,6 +131,7 @@ function renderizarResultados(data) {
       </div>
 
       <div class="extra-grid">
+
         ${
           item.programas_aplica?.length
             ? `
@@ -130,11 +157,15 @@ function renderizarResultados(data) {
         `
             : ""
         }
+
       </div>
+
     </article>
   `).join("");
 }
 
+
+// 🎯 Eventos
 btnBuscar.addEventListener("click", () => {
   const resultados = filtrarConvocatorias();
   renderizarResultados(resultados);
@@ -144,7 +175,10 @@ btnLimpiar.addEventListener("click", () => {
   nivelSelect.value = "";
   facultadSelect.value = "";
   modalidadSelect.value = "";
+
   renderizarResultados(convocatorias);
 });
 
+
+// 🚀 Inicializar
 cargarDatos();
